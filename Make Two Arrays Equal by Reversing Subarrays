@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool canBeEqual(vector<int>& target, vector<int>& arr) {
+        int key,i,j,c=0;
+        int size1=target.size();
+        int size2=arr.size();
+        sort(target.begin(),target.end());
+        sort(arr.begin(),arr.end());
+        if(size1==size2){
+            for(i=0; i<size1; i++){
+                if(target[i]==arr[i]){
+                    c++;
+                }
+            }
+        }
+        if(c==size1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};
