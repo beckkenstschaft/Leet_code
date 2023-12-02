@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        int lenjewels = jewels.length();
+        int lenstones = stones.length();
+        int c=0;
+        for(int i=0; i<lenstones; i++){
+            for(int j=0; j<lenjewels; j++){
+                if(jewels[j]==stones[i]){
+                    c++;
+                }
+            }
+        }
+        return c;
+    }
+};
