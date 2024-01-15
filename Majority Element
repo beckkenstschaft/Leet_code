@@ -1,0 +1,22 @@
+#include <unordered_map>
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        unordered_map <int,int> ans;
+        int n = nums.size();
+        int target = n/2;
+        
+
+        for(auto it : nums){
+            ans[it]++;
+        }
+
+        for(auto it:ans){
+            if(it.second>target){
+                return it.first;
+            }
+        }
+
+        return 0;
+    }
+};
