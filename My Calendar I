@@ -1,0 +1,24 @@
+class MyCalendar {
+public:
+    map<int, int> map_main;
+    MyCalendar() {
+        
+    }
+    
+    bool book(int start, int end) {
+        auto iterator = map_main.upper_bound(start);
+        if(iterator == map_main.end() || iterator->second >=end){
+            map_main[end] = start;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};
+
+/**
+ * Your MyCalendar object will be instantiated and called as such:
+ * MyCalendar* obj = new MyCalendar();
+ * bool param_1 = obj->book(start,end);
+ */
