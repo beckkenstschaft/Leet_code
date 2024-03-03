@@ -1,0 +1,38 @@
+class Solution {
+public:
+    string convert(string s, int numRows) {
+        
+        if(numRows == 1 || s.length() <= numRows){
+            return s;
+        }
+
+        vector<string> temp(numRows, "");
+        string ans = "";
+
+        bool flag = false;
+        int temp_count = 0;
+        
+        for(auto ch : s){
+            
+            if(temp_count == 0 || temp_count == numRows-1){
+                flag = !flag;
+            }
+            
+            temp[temp_count]+=ch;
+            
+            if(flag){
+                temp_count++;
+            }
+            
+            else{
+                temp_count--;
+            }
+        }
+
+        for(auto &iterator : temp){
+            ans+=iterator;
+        }
+
+        return ans;
+    }
+};
