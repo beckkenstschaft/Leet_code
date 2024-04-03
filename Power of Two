@@ -1,0 +1,17 @@
+#include <cmath>
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        if (n <= 0)
+            return false;
+
+        for (int i = 0; i < 31; ++i) {
+            int power_of_two = static_cast<int>(pow(2, i));
+            if (n == power_of_two)
+                return true;
+            else if (power_of_two > n)
+                break;
+        }
+        return false;
+    }
+};
